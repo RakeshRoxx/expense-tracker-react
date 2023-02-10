@@ -1,4 +1,5 @@
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpanse from "./components/NewExpanse/NewExpanse";
 
 function App() {
   const expenses = [
@@ -22,8 +23,15 @@ function App() {
       date: new Date(2023, 5, 12),
     },
   ];
+
+  const addExpenseData = (enteredDate) => {
+    console.log("IN APP JS!!!");
+    console.log(enteredDate);
+  };
+
   return (
     <div>
+      <NewExpanse onAddExpanse={addExpenseData} />
       <Expenses item={expenses}></Expenses>
     </div>
   );
