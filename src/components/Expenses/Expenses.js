@@ -1,15 +1,16 @@
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
-
+import ExpenseList from "./ExpenseList";
+import ExpanseChart from "./ExpenseChart";
 function Expenses(props) {
   return (
-    <Card className="expenses">
-      <ExpenseItem data={props.item[0]}></ExpenseItem>
-      <ExpenseItem data={props.item[1]}></ExpenseItem>
-      <ExpenseItem data={props.item[2]}></ExpenseItem>
-      <ExpenseItem data={props.item[3]}></ExpenseItem>
-    </Card>
+    <ul>
+      <Card className="expenses">
+        <ExpanseChart expenses={props.item} />
+        <ExpenseList item={props.item} />
+        {/* <ExpenseItem data={props.item[0]}></ExpenseItem> */}
+      </Card>
+    </ul>
   );
 }
 
